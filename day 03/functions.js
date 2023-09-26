@@ -16,6 +16,10 @@ function call : when you  call the function
 user defined function :  when user created the function is called user defined 
 predifined function : when  other developer create the function for you it is predifined function 
 
+
+
+if you define two same concepts function in javascript you wll not get any error 
+but it will call teh latest function 
 */
 
 // function declaration or function definition 
@@ -23,5 +27,31 @@ predifined function : when  other developer create the function for you it is pr
 function fnName(){
     console.log("hello word")
 }
+
+function fnName(){
+    console.log("second function ")
+}
+function fnName(){
+    console.log("third function ")
+}
+function fnName(){
+    console.log("fourth function")
+}
+function fnName(){
+    console.log("this si the fifth function ")
+}
 // function call 
 fnName()
+fnName()
+fnName()
+fnName()
+// you can call the function multiple times in your own requirement
+
+// function paramets are varaibles without scope statements which used to store data 
+// and we can uilize the data of parameters inside the function scope  to perfom some action 
+// paramers are always defined while function is created 
+// parameters are defined inside the parenthesis  ()
+// you can pass multiple parameters  seperated with a comma , 
+
+// function argument  when you calling a function and pass a data to it is called function arguement
+
