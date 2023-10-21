@@ -95,3 +95,5 @@ const name   = function(name){
 }
 // to call function expression you can use the variable that you assign it 
 name("amir")
+
+
