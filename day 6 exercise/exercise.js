@@ -71,11 +71,15 @@ console.log(
   )}`
 );
 
-let string = prompt("enter something ...");
-if(string.startsWith("py")){
-    console.log(string)
-}else{
-    console.log(string.padStart(string.length + 2 , "py"))
-}
+// let string = prompt("enter something ...");
+// if(string.startsWith("py")){
+//     console.log(string)
+// }else{
+//     console.log(string.padStart(string.length + 2 , "py"))
+// }
 
-// console.log();
+ 
+let arr  = [1,23,5,6,50]
+let sum = arr.reduce((t,e)=> t+=  e)
+
+console.log(sum);
