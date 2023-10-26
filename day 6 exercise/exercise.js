@@ -98,3 +98,13 @@ let diff  = todaysDate -  startDate
 // let diff =  todaysDate.getTime()  - startYear.getTime()
 // let passedDays = Math.floor(diff/(1000*60*60*24))
 console.log("days that passed since from 2023 is : "+Math.floor(diff / (1000 * 60 * 60 * 24)))
+
+
+function  getAge(birthDate){
+    let date  = new Date(birthDate)
+    console.log(date)
+    console.log(new Date().getFullYear() - date.getFullYear())
+}
+
+getAge('2004,01,01')
+
