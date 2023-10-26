@@ -12,3 +12,9 @@ console.log(date.getSeconds()) // seconds  as a number
 const d  = new Date()
 console.log(d.getMonth())
 
+const d1  = new Date('2023-10-2')
+const d2  = new Date('2003-2-2')
+console.log(d1.getDate() > d2.getDate())
+console.log(d1.getDay())
+
+
