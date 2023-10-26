@@ -38,3 +38,19 @@ function checkLeapYear(year){
 }
 
 checkLeapYear(2028)
+
+function guessNumber(){
+    let randomNumber  =  Math.floor(Math.random() * (10 - 1)+1)
+    let userGuess   = Number(prompt("enter a number between 1 to 10"))
+    if(userGuess > 10){
+        console.log("please enter a number between 1 and 10")
+    }
+    if(userGuess == randomNumber){
+        console.log("Good work")
+    }else{
+        console.log(`Not Matched , The guess number is ${randomNumber} `)
+    }
+   
+}
+
+guessNumber()
