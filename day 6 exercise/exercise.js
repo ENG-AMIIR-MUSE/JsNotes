@@ -90,3 +90,11 @@ for (let i = 0; i <= 5; i++) {
     }
     console.log(star)
 }
+
+let startDate  = new Date('2023,01 ,01')
+let todaysDate  = new Date()
+let diff  = todaysDate -  startDate
+// let startYear  =  new Date(2023,0,1)
+// let diff =  todaysDate.getTime()  - startYear.getTime()
+// let passedDays = Math.floor(diff/(1000*60*60*24))
+console.log("days that passed since from 2023 is : "+Math.floor(diff / (1000 * 60 * 60 * 24)))
