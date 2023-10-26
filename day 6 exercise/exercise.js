@@ -52,5 +52,13 @@ function guessNumber(){
     }
    
 }
+// guessNumber()
+ 
 
-guessNumber()
+let today = new Date()
+
+let startOfYear  =  new Date(2024 ,0,1)
+
+const timDiff = startOfYear - today 
+// let daysLeft  = (startOfYear.getTime() -  today.getTime()) /( 1000 * 60 * 60 * 24)
+console.log(`Number of days left in 2023 is ${Math.floor(timDiff / (1000 * 60 * 60 * 24))}`)
