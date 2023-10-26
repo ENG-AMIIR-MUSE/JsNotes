@@ -16,6 +16,7 @@ console.log(
   } current time is : ${d3.toLocaleTimeString()}`
 );
 
+// 2 ) =============  caluclate the area of triable 
 function calculateAreaOfTriangle(l1, l2, l3) {
   let semiPerimeter = (l1 + l2 + l3) / 2;
   let areaOfTri = Math.sqrt(
@@ -27,3 +28,13 @@ function calculateAreaOfTriangle(l1, l2, l3) {
 
 console.log(`The area of Triangle is : ${Math.floor(calculateAreaOfTriangle(15,16,17))} cm square`)
 
+//  3) ===============check if  year is  leap year
+function checkLeapYear(year){
+ if(year %4  == 0){
+    console.log(`${year}  is a leap year`)
+ }else{
+    console.log(`${year}  is not a leap year `)
+ }
+}
+
+checkLeapYear(2028)
