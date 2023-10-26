@@ -78,8 +78,15 @@ console.log(
 //     console.log(string.padStart(string.length + 2 , "py"))
 // }
 
- 
-let arr  = [1,23,5,6,50]
-let sum = arr.reduce((t,e)=> t+=  e)
+let arr = [1, 23, 5, 6, 50];
+let sum = arr.reduce((t, e) => (t += e));
 
 console.log(sum);
+
+let star  = ""
+for (let i = 0; i <= 5; i++) {
+    for(let j =  0 ; j <= i ; j++){
+            star  += "*" 
+    }
+    console.log(star)
+}
