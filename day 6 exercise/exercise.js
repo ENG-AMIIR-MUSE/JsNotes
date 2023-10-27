@@ -160,4 +160,23 @@ return   dayNames[newD.getDay()].slice(0,3)
 
 
 }
-console.log(getDayWithThreeLetters(new Date('2023,10,26')))
+console.log(getDayWithThreeLetters(new Date('2023,10,27')))
+
+
+function sawpArray(arr){
+  let tem =  0;
+  let first  =  arr[0]
+  let last  = arr[arr.length -1]
+console.log(arr)
+  temp =  first 
+  first = last 
+  last  = temp
+  arr.shift()
+  arr.unshift(first)
+  arr.pop()
+  arr.push(last)
+ console.log(arr)
+
+}
+
+sawpArray([1,2,3,4])
