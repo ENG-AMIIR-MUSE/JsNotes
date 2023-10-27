@@ -162,7 +162,7 @@ return   dayNames[newD.getDay()].slice(0,3)
 }
 console.log(getDayWithThreeLetters(new Date('2023,10,27')))
 
-
+// 11   awap aray
 function sawpArray(arr){
   let tem =  0;
   let first  =  arr[0]
@@ -180,3 +180,73 @@ console.log(arr)
 }
 
 sawpArray([1,2,3,4])
+
+
+// function replace(string){
+//  let chars   = string.toLowerCase().split("")
+//  console.log(chars.chartCodeAt(0))
+// for(let i   = 0 ; i < chars.length; i ++){
+//   let currentChar   = chars[i]
+//   //  console.log(currentChar.chartCodeAt(0))
+// }
+  
+
+// }
+
+// replace("zabra")
+
+function
+ 
+celsiusToFahrenheit(celsius) {
+  return (celsius * 9 / 5) + 32;
+}
+
+function
+ 
+fahrenheitToCelsius(fahrenheit) {
+  return (fahrenheit - 32) * 5 / 9;
+}
+
+console.log(celsiusToFahrenheit(60))
+
+
+function sumOfcubes(n){
+let sum =  0;
+for(let i  =0 ; i <= n; i ++){
+  sum += i
+}
+return sum;
+}
+// let n = Number(prompt("enter a number"))
+
+// console.log("the sum of all integers from 1 to "+ n + " is : "+ sumOfcubes(n))
+
+function getTotalMarks(examType, arrayMarks,){
+  let range1  =  89 
+  let range2  = 100
+
+  let total   = 0;
+  // let got =  false
+  arrayMarks.reduce((t,mark)=> total = t+= mark)
+  if(examType == "midterm" && total >=  range1 && total <= range2){
+   return "student got A+"
+  }
+  else if(examType == "final" && total >=  range1 && total <= range2){
+    return "student got A+"
+  }else{
+
+    return false
+  }
+}
+console.log(getTotalMarks("midterm",[10,20,50,9]))
+
+
+
+function checkEligible(){
+  let age  =   Number(prompt("enter you age"))
+  if(age >= 21){
+    console.log("you are eligble for vote")
+  }else{
+    console.log("you are not")
+  }
+}
