@@ -45,6 +45,7 @@ function checkLeapYear(year) {
 
 checkLeapYear(2028);
 
+// 4 ) ====================Guess Number
 function guessNumber() {
   let randomNumber = Math.floor(Math.random() * (10 - 1) + 1);
   let userGuess = Number(prompt("enter a number between 1 to 10"));
@@ -63,7 +64,7 @@ let today = new Date();
 
 let startOfYear = new Date(2024, 0, 1);
 
-const timDiff = startOfYear - today;
+const timDiff = startOfYear - today; // miliseocnd
 // let daysLeft  = (startOfYear.getTime() -  today.getTime()) /( 1000 * 60 * 60 * 24)
 console.log(
   `Number of days left in 2023 is ${Math.floor(
@@ -78,33 +79,82 @@ console.log(
 //     console.log(string.padStart(string.length + 2 , "py"))
 // }
 
+// 8 ) ===================
+
+function checkNumber(num) {
+  if (num % 3 == 0 || num % 7 == 0) {
+    return true;
+  }
+  return false;
+}
+console.log(checkNumber(9));
+
 let arr = [1, 23, 5, 6, 50];
 let sum = arr.reduce((t, e) => (t += e));
 
 console.log(sum);
 
-let star  = ""
+// 19 ==================== print stars
+let star = "";
 for (let i = 0; i <= 5; i++) {
-    for(let j =  0 ; j <= i ; j++){
-            star  += "*" 
-    }
-    console.log(star)
+  for (let j = 0; j <= i; j++) {
+    star += "*";
+  }
+  console.log(star);
 }
 
-let startDate  = new Date('2023,01 ,01')
-let todaysDate  = new Date()
-let diff  = todaysDate -  startDate
-// let startYear  =  new Date(2023,0,1)
-// let diff =  todaysDate.getTime()  - startYear.getTime()
-// let passedDays = Math.floor(diff/(1000*60*60*24))
-console.log("days that passed since from 2023 is : "+Math.floor(diff / (1000 * 60 * 60 * 24)))
+// 23    ================ number of days passed from 2023
 
+let startDate = new Date("2023,01 ,01");
+let todaysDate = new Date();
+let diff = todaysDate - startDate;
+console.log(
+  "days that passed since from 2023 is : " +
+    Math.floor(diff / (1000 * 60 * 60 * 24))
+);
 
-function  getAge(birthDate){
-    let date  = new Date(birthDate)
-    console.log(date)
-    console.log(new Date().getFullYear() - date.getFullYear())
+//  24 ) ==========program to calculate age. while pass your birthdate.
+
+function getAge(birthDate) {
+  let date = new Date(birthDate);
+  console.log(date);
+  console.log(new Date().getFullYear() - date.getFullYear());
 }
 
-getAge('2004,01,01')
+getAge("2004,01,01");
 
+//  22 ) ===============compare dates
+
+function compareDates(date1, date2) {
+  let d1 = new Date(date1);
+  let d2 = new Date(date2);
+
+  if (d1 > d2) {
+    console.log(`date 1 ${date1} is greater then date 2 ${date2} `);
+  }
+  else if(date1   === date2){
+    console.log(`date 1 and date 2 are equal  date 1 : ${d1}  date 2 ${d2}`)
+  }
+  else {
+    console.log(`date 2 ${date2} is less then date 1 ${date1} `);
+  }
+}
+
+compareDates('2025,01,01','2025,01,01');
+
+// 21  ) ===================================
+function getMonthName(date){
+  const monthNames = ["January","February","March","April","May","June","July","August","September","Octobar","Novembar","December"]
+  const  d  = new Date(date)
+  console.log(monthNames[d.getMonth()])
+
+}
+getMonthName('2023,10,2')
+
+
+function getDayWithThreeLetters(date){
+  let date  = new Date(date)
+  console.log(date.getDay())
+
+}
+getDayWithThreeLetters()
