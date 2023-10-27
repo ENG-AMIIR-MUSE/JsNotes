@@ -152,9 +152,12 @@ function getMonthName(date){
 getMonthName('2023,10,2')
 
 
+// 25 ================= get day with three letter
 function getDayWithThreeLetters(date){
-  let date  = new Date(date)
-  console.log(date.getDay())
+ let newD  = new Date(date)
+ let  dayNames  =  ['Monday',"Thuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
+return   dayNames[newD.getDay()].slice(0,3)
+
 
 }
-getDayWithThreeLetters()
+console.log(getDayWithThreeLetters(new Date('2023,10,26')))
