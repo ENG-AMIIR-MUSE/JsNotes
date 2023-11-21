@@ -1,0 +1,54 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    width: 100%;
+}
+.con{
+    display: grid;
+    height: 100%;
+    grid-template-columns: 1fr ;
+    grid-template-rows: 100px 100px;
+    justify-content: center;
+    place-items: center;
+   
+}
+.con .start{
+    background-color: rebeccapurple;
+    padding: 10px;
+
+}
+.sub{
+   width: 50%;
+   /* background-color: red; */
+   padding: 10px;
+   border: 1px solid black;
+   /* visibility: none; */
+   display: none;
+}
+.show{
+    display: block;
+}
+.sub input{
+    width: 80%;
+    height: 40px;
+    border-radius: 10px;
+    margin-top: 10px;
+    
+}
+.sub button{
+    border-radius: 10px;
+    border: 0;
+    outline: none;
+    padding: 10px 10px;
+    background-color:green;
+    color: white;
+
+}
+.sub .text{
+    margin-top: 10px;
+    color: green;
+}
