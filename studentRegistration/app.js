@@ -1,25 +1,35 @@
 let form = document.querySelector(".courseForm"),
-    courseName = document.querySelector("#course_name");
-    code = document.querySelector("#code");
-    reigster = document.querySelector("#register");
-    message = document.querySelector(".message");
-    add = document.querySelector(".add");
-    container = document.querySelector('.container')
-    courses  = JSON.parse(localStorage.getItem("courses") || "[]")
+    courseName = document.querySelector("#course_name"),
+    code = document.querySelector("#code"),
+    btn = document.querySelector("#btn"),
+    message = document.querySelector(".message"),
+    add = document.querySelector(".add button"),
+    container = document.querySelector('.container'),
+    courses  = JSON.parse(localStorage.getItem("courses") || "[]"),
+    indexToUpdate;
+    
 
 add.addEventListener("click", () => {
   console.log("clicked");
   form.classList.toggle("show");
 });
-reigster.addEventListener("click", (e) => {
+btn.addEventListener("click", (e) => {
   e.preventDefault();
   if (courseName.value == "" || code.value == "") {
     alert("all fields are requried");
+    console.log("...............")
+
   }else{
-    addCourse(courseName, code)
-    courseName.value = ""
-    code.value = ""
-    form.classList.toggle("show");
+    if(btn.value == "Register"){
+      console.log("in  ....")
+        addCourse(courseName, code)
+        courseName.value = ""
+        code.value = ""
+        form.classList.toggle("show");
+    }else if(btn.value == "update"){
+        update()
+        form.classList.toggle('show')
+    }
 
   }
 });
@@ -79,5 +89,23 @@ function removeCourse(index){
     courses.splice(index,1)
     localStorage.setItem("courses",JSON.stringify(courses)) 
     display(courses)
+}
+function editCourse(index){
+    form.classList.toggle("show")
+    courseName.value =  courses[index].courseName
+    code.value =  courses[index].code
+    indexToUpdate = index
+    btn.value = "update"
+    
+
+}
+function update(){
+    courses[indexToUpdate].courseName = courseName.value
+    courses[indexToUpdate].code = code.value
+    localStorage.setItem("courses",JSON.stringify(courses))
+    display(courses)
+    courseName.value = ""
+    code.value = ""
+    btn.value = "register"
 }
 console.log(courses)
