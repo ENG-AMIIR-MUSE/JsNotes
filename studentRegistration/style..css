@@ -93,14 +93,17 @@ form  h3{
     display: block;
 }
 .add{
-    text-align: right;
-    margin-right: 10px;
-    display: inline-block;
+   
+    max-width: 1000px;
+    
+  
     display: flex;
     width: 100%;
+    display: flex;
     justify-content: flex-end;
+    margin: auto;
     /* background-color: rebeccapurple; */
-    text-align: right;
+    
 
 }
 .add button{
