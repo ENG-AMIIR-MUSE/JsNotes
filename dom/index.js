@@ -23,11 +23,4 @@ let h1  =  document.getElementById("h1")
  h1  =  document.getElementsByName("h1")
 
  h1 =  document.querySelectorAll("h1")
- 
-//  Array.from(h1).forEach(h1=>h1.sytle.addClassList ="right")
- // collection 
-//  Array.from(h1).forEach((h)=>console.log(h))
-// h1.forEeach((a)=>console.log(a))
-
-//  h1  =  document.getElementsByClassName("h1")
 console.log("h1" ,h1)

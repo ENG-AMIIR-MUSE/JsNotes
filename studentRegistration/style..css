@@ -50,7 +50,7 @@ form{
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(225, 222, 222, 0.665);
+    background-color: white;
     padding: 10px;
     /* background-color: red; */
     border: 1px solid black;
@@ -113,4 +113,34 @@ form  h3{
     border: 0;
     outline: 0;
     color: white;
+}
+.stdForm img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+ img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.searchCon{
+    max-width: 1000px;
+    margin: auto;
+    width: 120px;
+    height: 40px;
+}
+
+table tr td button{
+    background-color: green;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+}
+table tr td button{
+    background-color: rgb(2, 190, 2);
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
 }

@@ -10,18 +10,18 @@ let form = document.querySelector(".courseForm"),
     
 
 add.addEventListener("click", () => {
-  console.log("clicked");
+ 
   form.classList.toggle("show");
 });
 btn.addEventListener("click", (e) => {
   e.preventDefault();
   if (courseName.value == "" || code.value == "") {
     alert("all fields are requried");
-    console.log("...............")
+ 
 
   }else{
     if(btn.value == "Register"){
-      console.log("in  ....")
+      
         addCourse(courseName, code)
         courseName.value = ""
         code.value = ""
@@ -33,6 +33,16 @@ btn.addEventListener("click", (e) => {
 
   }
 });
+stdSearch.addEventListener("input", () => {
+    const searchItem = stdSearch.value.toLowerCase();
+    const filtered = courses.filter((data) =>
+      data.courseName.toLowerCase().includes(searchItem)
+    
+   
+    );
+    console.log("filtered", filtered);
+    display(filtered);
+  });
 
 display(courses)
 function display(allCourses){
@@ -48,7 +58,7 @@ function display(allCourses){
 
     `
     if(allCourses.length > 0){
-console.log("greater then ")
+
     allCourses.forEach((course,index)=>{
         output += `
         <tr>
@@ -68,10 +78,10 @@ console.log("greater then ")
 
     })
     output += '</table>'
-    console.log(output)
+   
     container.innerHTML = output
 }else{
-    console.log('less then ')
+ 
     output += `<tr><td>No courses added yet</td></tr>`
     container.innerHTML =  output
 
@@ -108,4 +118,3 @@ function update(){
     code.value = ""
     btn.value = "register"
 }
-console.log(courses)

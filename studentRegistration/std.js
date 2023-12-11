@@ -2,6 +2,7 @@ let form = document.querySelector(".stdForm"),
     name = document.querySelector("#name"),
     email = document.querySelector("#Email"),
     address = document.querySelector("#Address"),
+    profile  = document.querySelector("#profile"),
   
    
     btn = document.querySelector("#btn"),
@@ -10,16 +11,27 @@ let form = document.querySelector(".stdForm"),
     container = document.querySelector('.container'),
     students  = JSON.parse(localStorage.getItem("students") || "[]"),
     choose  = document.querySelector(".choose"),
+    imgPro,
     indexToUpdate;
-    
+
+
 const allCourses =  JSON.parse(localStorage.getItem('courses'))
 getCourses()
+display(students)
+profile.addEventListener('change',(e)=>{
+    console.log('changed')
+
+    let img  =e.target.files[0]
+    console.log(img)
+    imgPro  =  img.src
+})
 function getCourses(){
     
     let output = ` <select  id="course">`
     const courseNames  =  allCourses.forEach((course)=>{
-        
+       
        output += `
+    <option value="courses">Courses</option>
     
     <option value="${course.courseName}">${course.courseName}</option>
    
@@ -32,13 +44,10 @@ choose.innerHTML =  output
 
 
 }
-// console.log("course Names",courseNames)
-console.log("all course",allCourses)
 let course  = document.querySelector("#course")
 
 course.addEventListener('change',()=>{
-    // console.log("some thng change ...")
-    console.log(course.value)
+    console.log("some thng change ...",course.value)
 })
 
 add.addEventListener("click", () => {
@@ -47,7 +56,7 @@ add.addEventListener("click", () => {
 });
 btn.addEventListener("click", (e) => {
   e.preventDefault();
-  if (name.value == "" || email.value == "" || address.value == ""|| course.value  == "course") {
+  if (name.value == "" || email.value == "" || address.value == ""|| course.value  == "courses") {
     alert("all fields are requried");
   }else{
     if(btn.value == "register"){
@@ -75,6 +84,7 @@ function display(students){
     <tr>
     <th>No
     </th>
+   
     <th>Name</th>
     <th>Email</th>
     <th>Address</th>
@@ -86,6 +96,7 @@ function display(students){
     if(students.length > 0){
 // console.log("greater then ")
 let i = 0;
+
     students.forEach((std,index)=>{
         output += `
         <tr>
@@ -93,6 +104,7 @@ let i = 0;
             <td>
             ${++i}
             </td>
+         
             <td>
             ${std.name}
             </td>
@@ -127,34 +139,56 @@ let i = 0;
 
 }
 function addStudent(name,email, address,course){
-    students.push({name:name.value, email:email.value,address:address.value, course:course.value})
+    students.push({name:name.value, email:email.value,address:address.value, course:course.value,imgPro})
     localStorage.setItem("students",JSON.stringify(students))
     display(students)
 }
 
-function removeCourse(index){
-    courses.splice(index,1)
-    localStorage.setItem("courses",JSON.stringify(courses)) 
-    display(courses)
+function removeStudent(index){
+    students.splice(index,1)
+    localStorage.setItem("students",JSON.stringify(students)) 
+    display(students)
 }
 function editStudent(index){
     form.classList.toggle("show")
     name.value =  students[index].name
     email.value =  students[index].email
     address.value = students[index].address
-    course.selected = students[index].course
+ 
+//     console.log("current",course.value)
+    
     indexToUpdate = index
     btn.value = "update"
     
 
 }
 function update(){
-    courses[indexToUpdate].courseName = courseName.value
-    courses[indexToUpdate].code = code.value
-    localStorage.setItem("courses",JSON.stringify(courses))
-    display(courses)
-    courseName.value = ""
-    code.value = ""
+    students[indexToUpdate].name = name.value
+    students[indexToUpdate].email = email.value
+    students[indexToUpdate].address = address.value
+    students[indexToUpdate].course = course.value
+ 
+    localStorage.setItem("students",JSON.stringify(students))
+    display(students)
+    location.reload()
+  
+    name.value = ""
+    email.value = ""
+    address.value = ""
     btn.value = "register"
 }
+
+stdSearch =  document.querySelector('#stdSearch')
+stdSearch.addEventListener("input", () => {
+    const searchItem = stdSearch.value.toLowerCase();
+    const filtered = students.filter((data) =>
+      data.name.toLowerCase().includes(searchItem)||
+      data.email.toLowerCase().includes(searchItem)||
+      data.address.toLowerCase().includes(searchItem)||
+      data.course.toLowerCase().includes(searchItem) 
+   
+    );
+    console.log("filtered", filtered);
+    display(filtered);
+  });
 console.log(students)
